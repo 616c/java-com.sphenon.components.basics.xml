@@ -1,7 +1,7 @@
 package com.sphenon.basics.xml;
 
 /****************************************************************************
-  Copyright 2001-2018 Sphenon GmbH
+  Copyright 2001-2024 Sphenon GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
   use this file except in compliance with the License. You may obtain a copy
@@ -52,7 +52,7 @@ import org.w3c.dom.ls.LSOutput;
 
 import org.w3c.dom.xpath.XPathResult;
 import org.w3c.dom.xpath.XPathEvaluator;
-import org.apache.xpath.domapi.XPathEvaluatorImpl;
+// import org.apache.xpath.domapi.XPathEvaluatorImpl;
 
 import javax.xml.transform.*;
 import javax.xml.transform.dom.*;

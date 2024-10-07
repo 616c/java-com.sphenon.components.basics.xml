@@ -1,7 +1,7 @@
 package com.sphenon.basics.xml;
 
 /****************************************************************************
-  Copyright 2001-2018 Sphenon GmbH
+  Copyright 2001-2024 Sphenon GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
   use this file except in compliance with the License. You may obtain a copy
@@ -381,6 +381,8 @@ public class XMLUtil {
     static protected HashMap<DOMImplementationLS,LSSerializer> fragment_serializers;
     static protected HashMap<DOMImplementationLS,LSSerializer> document_serializers;
 
+    static protected boolean WORKAROUND_SUPPLEMENTARY_UNICODE_CHARACTERS = true;
+
     static protected LSSerializer getLSSerializer(CallContext context, Document document, boolean fragment) {
         LSSerializer serializer = null;
         DOMImplementationLS domils = ((DOMImplementationLS)(document.getImplementation()));
@@ -391,7 +393,11 @@ public class XMLUtil {
                 serializer = fragment_serializers.get(domils);
             }
             if (serializer == null) {
+                // if (WORKAROUND_SUPPLEMENTARY_UNICODE_CHARACTERS) {
+                //     serializer = new org.apache.xerces.dom.DOMSerializerImpl();
+                // } else {
                 serializer = domils.createLSSerializer();
+                // }
                 serializer.getDomConfig().setParameter("xml-declaration", new Boolean(false));
                 serializer.getDomConfig().setParameter("cdata-sections", new Boolean(true));
                 serializer.getDomConfig().setParameter("comments", new Boolean(true));
@@ -407,7 +413,11 @@ public class XMLUtil {
                 serializer = document_serializers.get(domils);
             }
             if (serializer == null) {
+                // if (WORKAROUND_SUPPLEMENTARY_UNICODE_CHARACTERS) {
+                //     serializer = new org.apache.xerces.dom.DOMSerializerImpl();
+                // } else {
                 serializer = domils.createLSSerializer();
+                // }
                 serializer.getDomConfig().setParameter("xml-declaration", new Boolean(true));
                 serializer.getDomConfig().setParameter("cdata-sections", new Boolean(true));
                 serializer.getDomConfig().setParameter("comments", new Boolean(true));

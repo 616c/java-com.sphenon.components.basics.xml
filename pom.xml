@@ -86,15 +86,10 @@
       <artifactId>xercesImpl</artifactId>
       <version>2.11.0</version>
     </dependency>
-     <dependency>
-      <groupId>xalan</groupId>
-      <artifactId>xalan</artifactId>
-      <version>2.7.1</version>
-    </dependency>
     <dependency>
-      <groupId>xalan</groupId>
-      <artifactId>serializer</artifactId>
-      <version>2.7.1</version>
-    </dependency>
+      <artifactId>jar</artifactId>
+      <groupId>com.sphenon.sphenonjavalib.,..Path.saxon</groupId>
+      <version>1.0.0</version>
+    </dependency>      
   </dependencies>
 </project>
