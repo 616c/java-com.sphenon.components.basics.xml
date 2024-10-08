@@ -87,9 +87,9 @@
       <version>2.11.0</version>
     </dependency>
     <dependency>
-      <artifactId>jar</artifactId>
-      <groupId>com.sphenon.sphenonjavalib.,..Path.saxon</groupId>
-      <version>1.0.0</version>
-    </dependency>      
+      <groupId>net.sf.saxon</groupId>
+      <artifactId>Saxon-HE</artifactId>
+      <version>12.5</version>
+    </dependency>
   </dependencies>
 </project>
