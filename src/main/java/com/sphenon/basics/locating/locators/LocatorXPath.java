@@ -44,7 +44,7 @@ public class LocatorXPath extends Locator {
     static protected Configuration config;
     static { config = Configuration.create(RootContext.getInitialisationContext(), "com.sphenon.basics.locating.locators.LocatorXPath"); };
     static {
-        CoreInitialiser.initialisePackage(RootContext.getInitialisationContext(), "com.sphenon.basics.xmlbindings.XMLBindingsPackageInitialiser");
+        CoreInitialiser.initialisePackage(RootContext.getInitialisationContext(), "com.sphenon.basics.xmlbindings.XMLBindingsPackageInitialiser?");
         // XMLBindingsPackageInitialiser.initialise();
     }
 
